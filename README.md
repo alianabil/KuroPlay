@@ -23,7 +23,7 @@
   Komponen global (<Sidebar />) yang selalu ada untuk menangani input pencarian.
 
 # Cara Menjalankan Secara Lokal
-  1. Clone repository (atau ekstrak file ZIP)
+  1. Clone repository 
      git clone https://github.com/username/website_anime_uas.git
   2. Masuk ke folder proyek
      cd website_anime_uas
