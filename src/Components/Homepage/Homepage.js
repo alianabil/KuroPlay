@@ -5,6 +5,7 @@ import Popular from "../popular/popular";
 import { useGlobalContext } from "../../context/global";
 import Upcoming from "../Upcoming/Upcoming";
 import Airing from "../Airing/Airing";
+import Footer from "../Footer/Footer";
 import "./Homepage.css";
 
 function Homepage() {
@@ -135,6 +136,7 @@ function Homepage() {
           {switchComponent()}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
