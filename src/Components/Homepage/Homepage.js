@@ -1,11 +1,11 @@
 "use client";
-
 import React from "react";
 import Popular from "../popular/popular";
 import { useGlobalContext } from "../../context/global";
 import Upcoming from "../Upcoming/Upcoming";
 import Airing from "../Airing/Airing";
 import Footer from "../Footer/Footer";
+import { Sun, Moon } from "lucide-react"; // Import icons
 import "./Homepage.css";
 
 function Homepage() {
@@ -20,6 +20,11 @@ function Homepage() {
   } = useGlobalContext();
 
   const [rendered, setRendered] = React.useState("popular");
+  const [theme, setTheme] = React.useState("dark"); // State for theme, default to dark
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
 
   const switchComponent = () => {
     switch (rendered) {
@@ -49,7 +54,6 @@ function Homepage() {
 
   const handleFilterClick = (filterType: string) => {
     setRendered(filterType);
-
     switch (filterType) {
       case "airing":
         getAiringAnime();
@@ -64,7 +68,9 @@ function Homepage() {
   };
 
   return (
-    <div className="homepage">
+    <div className={`homepage ${theme}`}>
+      {" "}
+      {/* Apply theme class here */}
       <header className="homepage-header">
         <div className="header-content">
           <div className="logo-section">
@@ -72,7 +78,6 @@ function Homepage() {
               <h1 className="logo-text">KuroPlay</h1>
             </div>
           </div>
-
           <div className="search-section">
             <form className="search-form" onSubmit={handleSubmit}>
               <div className="search-input-wrapper">
@@ -90,7 +95,6 @@ function Homepage() {
               </div>
             </form>
           </div>
-
           <div className="filter-section">
             <div className="filter-buttons">
               <button
@@ -102,7 +106,6 @@ function Homepage() {
                 <i className="fas fa-fire"></i>
                 <span>Popular</span>
               </button>
-
               <button
                 className={`filter-btn ${
                   rendered === "airing" ? "active" : ""
@@ -112,7 +115,6 @@ function Homepage() {
                 <i className="fas fa-broadcast-tower"></i>
                 <span>Airing</span>
               </button>
-
               <button
                 className={`filter-btn ${
                   rendered === "upcoming" ? "active" : ""
@@ -123,10 +125,12 @@ function Homepage() {
                 <span>Upcoming</span>
               </button>
             </div>
+            <button onClick={toggleTheme} className="theme-toggle-button">
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           </div>
         </div>
       </header>
-
       <main className="homepage-content">
         <div className="content-wrapper">
           <div className="page-title-section">
@@ -140,5 +144,4 @@ function Homepage() {
     </div>
   );
 }
-
 export default Homepage;
