@@ -3,6 +3,12 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   padding: 2rem 0;
+  transition: background 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Airing Section */
+.homepage.light .airing-wrapper {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
 }
 
 .airing-container {
@@ -33,10 +39,22 @@
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Light Mode Styles for Anime Card */
+.homepage.light .anime-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(138, 43, 226, 0.15);
+}
+
 .anime-card:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
   border-color: rgba(138, 43, 226, 0.6);
+}
+
+/* Light Mode Styles for Anime Card Hover */
+.homepage.light .anime-card:hover {
+  box-shadow: 0 15px 30px rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.3);
 }
 
 .anime-link {
@@ -64,6 +82,11 @@
   filter: brightness(0.8);
 }
 
+/* Light Mode Styles for Anime Image Hover */
+.homepage.light .anime-card:hover .anime-image {
+  filter: brightness(0.9);
+}
+
 /* Overlay Styles */
 .anime-overlay {
   position: absolute;
@@ -81,12 +104,28 @@
   transition: all 0.3s ease;
 }
 
+/* Light Mode Styles for Anime Overlay */
+.homepage.light .anime-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 100%
+  );
+}
+
 .anime-card:hover .anime-overlay {
   transform: translateY(0);
 }
 
 .anime-info {
   color: #ffffff;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Anime Info */
+.homepage.light .anime-info {
+  color: #333333;
 }
 
 .anime-title {
@@ -99,6 +138,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Anime Title */
+.homepage.light .anime-title {
+  text-shadow: none;
 }
 
 .anime-details {
@@ -118,6 +163,13 @@
   border-radius: 15px;
   font-weight: 600;
   box-shadow: 0 1px 5px rgba(138, 43, 226, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Anime Score */
+.homepage.light .anime-score {
+  background: linear-gradient(135deg, #9370db, #8a2be2);
+  box-shadow: 0 1px 5px rgba(138, 43, 226, 0.2);
 }
 
 .anime-score i {
@@ -131,6 +183,12 @@
   border-radius: 15px;
   font-weight: 600;
   backdrop-filter: blur(10px);
+  transition: background 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Anime Year */
+.homepage.light .anime-year {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 /* Empty Message Styles */
@@ -139,6 +197,12 @@
   text-align: center;
   padding: 4rem 2rem;
   color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Empty Message */
+.homepage.light .empty-message {
+  color: rgba(51, 51, 51, 0.7);
 }
 
 .empty-message i {
@@ -204,20 +268,16 @@
     padding: 0 1rem;
     gap: 1rem;
   }
-
   .airing-anime {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.8rem;
   }
-
   .anime-image-wrapper {
     height: 200px;
   }
-
   .anime-title {
     font-size: 0.8rem;
   }
-
   .anime-overlay {
     padding: 0.8rem;
   }
@@ -228,21 +288,17 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 0.5rem;
   }
-
   .anime-image-wrapper {
     height: 180px;
   }
-
   .anime-title {
     font-size: 0.7rem;
   }
-
   .anime-details {
     flex-direction: column;
     gap: 0.3rem;
     align-items: flex-start;
   }
-
   .anime-score,
   .anime-year {
     font-size: 0.7rem;
@@ -258,6 +314,16 @@
       to top,
       rgba(26, 26, 46, 0.9) 0%,
       rgba(26, 26, 46, 0.6) 70%,
+      transparent 100%
+    );
+  }
+
+  /* Light Mode Styles for Hover Effects on Touch Devices */
+  .homepage.light .anime-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.6) 70%,
       transparent 100%
     );
   }
