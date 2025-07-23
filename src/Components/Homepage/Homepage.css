@@ -4,6 +4,13 @@
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #ffffff;
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Homepage Wrapper */
+.homepage.light {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
+  color: #333333;
 }
 
 /* Header Styles - Three Column Layout */
@@ -15,6 +22,13 @@
   top: 0;
   z-index: 100;
   background: rgba(26, 26, 46, 0.95);
+  transition: background 0.3s ease, border-bottom-color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Header */
+.homepage.light .homepage-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -43,6 +57,12 @@
   background-clip: text;
   animation: gradientShift 3s ease-in-out infinite;
   white-space: nowrap;
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Logo Text */
+.homepage.light .logo-text {
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
 }
 
 @keyframes gradientShift {
@@ -79,15 +99,32 @@
   transition: all 0.3s ease;
 }
 
+/* Light Mode Styles for Search Input Wrapper */
+.homepage.light .search-input-wrapper {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
 .search-input-wrapper:focus-within {
   border-color: #4ecdc4;
   box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+/* Light Mode Styles for Search Input Wrapper Focus */
+.homepage.light .search-input-wrapper:focus-within {
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.15);
 }
 
 .search-icon {
   color: rgba(255, 255, 255, 0.6);
   margin-left: 1rem;
   font-size: 1.1rem;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Search Icon */
+.homepage.light .search-icon {
+  color: rgba(51, 51, 51, 0.6);
 }
 
 .search-input {
@@ -99,10 +136,21 @@
   font-size: 1rem;
   padding: 0.75rem 1rem;
   font-family: inherit;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Search Input */
+.homepage.light .search-input {
+  color: #333333;
 }
 
 .search-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* Light Mode Styles for Search Input Placeholder */
+.homepage.light .search-input::placeholder {
+  color: rgba(51, 51, 51, 0.5);
 }
 
 .search-btn {
@@ -117,15 +165,28 @@
   font-family: inherit;
 }
 
+/* Light Mode Styles for Search Button */
+.homepage.light .search-btn {
+  background: linear-gradient(135deg, #9370db, #8a2be2);
+}
+
 .search-btn:hover {
   background: linear-gradient(135deg, #9932cc, #8a2be2);
   transform: scale(1.05);
   box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);
 }
 
+/* Light Mode Styles for Search Button Hover */
+.homepage.light .search-btn:hover {
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.25);
+}
+
 /* Filter Section - Right */
 .filter-section {
   flex: 0 0 auto;
+  display: flex; /* Ensure it's a flex container */
+  align-items: center; /* Align items vertically */
+  gap: 1rem; /* Space between filter buttons and theme toggle */
 }
 
 .filter-buttons {
@@ -152,6 +213,13 @@
   white-space: nowrap;
 }
 
+/* Light Mode Styles for Filter Button */
+.homepage.light .filter-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(138, 43, 226, 0.15);
+  color: #333333;
+}
+
 .filter-btn::before {
   content: "";
   position: absolute;
@@ -168,6 +236,16 @@
   transition: left 0.5s ease;
 }
 
+/* Light Mode Styles for Filter Button ::before */
+.homepage.light .filter-btn::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 43, 226, 0.15),
+    transparent
+  );
+}
+
 .filter-btn:hover::before {
   left: 100%;
 }
@@ -180,11 +258,25 @@
   color: #ffffff;
 }
 
+/* Light Mode Styles for Filter Button Hover */
+.homepage.light .filter-btn:hover {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+  color: #333333;
+}
+
 .filter-btn.active {
   background: linear-gradient(135deg, #8a2be2, #9370db, #ba55d3);
   border-color: transparent;
   box-shadow: 0 5px 20px rgba(138, 43, 226, 0.6);
   color: #ffffff;
+}
+
+/* Light Mode Styles for Active Filter Button */
+.homepage.light .filter-btn.active {
+  background: linear-gradient(135deg, #9370db, #8a2be2, #ba55d3);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.3);
 }
 
 .filter-btn.active:hover {
@@ -193,8 +285,43 @@
   box-shadow: 0 8px 30px rgba(138, 43, 226, 0.7);
 }
 
+/* Light Mode Styles for Active Filter Button Hover */
+.homepage.light .filter-btn.active:hover {
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
+}
+
 .filter-btn i {
   font-size: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Styles for Theme Toggle Button */
+.homepage.light .theme-toggle-button {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.theme-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Light Mode Styles for Theme Toggle Button Hover */
+.homepage.light .theme-toggle-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333333;
 }
 
 /* Content Area */
@@ -219,6 +346,13 @@
   margin: 0;
   color: #ffffff;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Current Page Title */
+.homepage.light .current-page-title {
+  color: #333333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .title-underline {
@@ -247,15 +381,16 @@
   .header-content {
     gap: 1rem;
   }
-
   .filter-btn span {
     display: none;
   }
-
   .filter-btn {
     padding: 0.75rem;
     min-width: 45px;
     justify-content: center;
+  }
+  .current-page-title {
+    font-size: 2rem;
   }
 }
 
@@ -265,31 +400,25 @@
     gap: 1rem;
     padding: 0 1rem;
   }
-
   .logo-section,
   .search-section,
   .filter-section {
     flex: none;
     width: 100%;
   }
-
   .search-section {
     order: 2;
   }
-
   .filter-section {
     order: 3;
   }
-
   .filter-buttons {
     justify-content: center;
   }
-
   .logo-text {
     font-size: 1.5rem;
     text-align: center;
   }
-
   .current-page-title {
     font-size: 2rem;
   }
@@ -299,21 +428,17 @@
   .homepage-header {
     padding: 1rem 0;
   }
-
   .filter-btn {
     flex: 1;
     min-width: 60px;
   }
-
   .search-input-wrapper {
     padding: 0.3rem;
   }
-
   .search-input {
     padding: 0.6rem 0.8rem;
     font-size: 0.9rem;
   }
-
   .search-btn {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
