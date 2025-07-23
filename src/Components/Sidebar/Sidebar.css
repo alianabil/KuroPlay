@@ -11,6 +11,14 @@
   gap: 1.5rem;
   height: fit-content; /* Sesuaikan tinggi dengan konten */
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Sidebar Container */
+.homepage.light .sidebar-container {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar-header {
@@ -28,6 +36,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Sidebar Title */
+.homepage.light .sidebar-title {
+  text-shadow: 0 0 5px rgba(138, 43, 226, 0.2);
 }
 
 .sidebar-underline {
@@ -57,11 +71,25 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Light Mode Styles for Sidebar Anime Item */
+.homepage.light .sidebar-anime-item {
+  color: #333333;
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 .sidebar-anime-item:hover {
   background: rgba(138, 43, 226, 0.2);
   transform: translateX(5px);
   box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
   border-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Light Mode Styles for Sidebar Anime Item Hover */
+.homepage.light .sidebar-anime-item:hover {
+  background: rgba(138, 43, 226, 0.1);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.25);
 }
 
 .sidebar-anime-image-wrapper {
@@ -71,6 +99,12 @@
   border-radius: 5px;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Sidebar Anime Image Wrapper */
+.homepage.light .sidebar-anime-image-wrapper {
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .sidebar-anime-image {
@@ -116,6 +150,12 @@
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Sidebar Empty Message */
+.homepage.light .sidebar-empty-message {
+  color: rgba(51, 51, 51, 0.6);
 }
 
 .sidebar-empty-message i {
@@ -137,7 +177,6 @@
     margin-top: 1rem; /* Tambah margin atas */
     padding: 1rem;
   }
-
   .sidebar-anime-list {
     flex-direction: row; /* Ubah menjadi horizontal scroll */
     overflow-x: auto; /* Aktifkan horizontal scroll */
@@ -145,7 +184,6 @@
     -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
     gap: 0.8rem; /* Jarak antar item di horizontal scroll */
   }
-
   .sidebar-anime-item {
     flex-shrink: 0; /* Jangan menyusut */
     width: 120px; /* Lebar tetap untuk item di horizontal scroll */
@@ -153,22 +191,18 @@
     text-align: center;
     padding: 0.5rem;
   }
-
   .sidebar-anime-image-wrapper {
     width: 100px; /* Ukuran gambar di mobile */
     height: 140px; /* Ukuran gambar di mobile */
     margin-bottom: 0.5rem;
   }
-
   .sidebar-anime-info {
     align-items: center;
   }
-
   .sidebar-anime-title {
     font-size: 0.8rem;
     -webkit-line-clamp: 3; /* Izinkan 3 baris judul di mobile */
   }
-
   .sidebar-anime-score {
     font-size: 0.7rem;
   }
@@ -179,17 +213,14 @@
   .sidebar-anime-list::-webkit-scrollbar {
     height: 6px;
   }
-
   .sidebar-anime-list::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 3px;
   }
-
   .sidebar-anime-list::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #8a2be2, #9370db);
     border-radius: 3px;
   }
-
   .sidebar-anime-list::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(90deg, #9932cc, #8a2be2);
   }
